@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="479.0" prefWidth="651.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.2-internal" fx:controller="sample.Controller"
+fx:id="mainPane">
+    <top>
+        <Label alignment="CENTER" text="Sort The Lines!" textFill="#0e61ff" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="Times New Roman Bold" size="20" />
+            </font>
+        </Label>
+    </top>
+    <padding>
+        <Insets top="10" />
+    </padding>
+    <left>
+        <VBox prefHeight="1197.0" prefWidth="304.0">
+            <padding>
+                <Insets left="10" top="10" />
+            </padding>
+            <Label alignment="CENTER" text="Generate the random lines">
+                <font>
+                    <Font name="Times New Roman Bold" size="13" />
+                </font>
+                <padding>
+                    <Insets bottom="10" top="50" />
+                </padding>
+            </Label>
+            <Button onAction="#generateLines" text="Generate" />
+            <Label alignment="CENTER" text="Choose an algorithm">
+                <padding>
+                    <Insets bottom="10" top="30" />
+                </padding>
+                <font>
+                    <Font name="Times New Roman Bold" size="13" />
+                </font>
+            </Label>
+            <ComboBox fx:id="sortingBox" onAction="#onSortingBoxChange">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Bubble Sort" />
+                        <String fx:value="Insertion Sort" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </VBox>
+    </left>
+    <center>
+        <HBox fx:id="lineBox" spacing="5" alignment="BOTTOM_LEFT">
+            <Line fx:id="actionTarget" />
+        </HBox>
+    </center>
+</BorderPane>
